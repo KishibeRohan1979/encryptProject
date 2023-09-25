@@ -8,6 +8,7 @@
 #include "choosewindow.h"
 #include "Forms/ui_ChooseWindow.h"
 #include "filewindow.h"
+#include "stringwindow.h"
 
 
 ChooseWindow::ChooseWindow(QWidget *parent) :
@@ -22,7 +23,6 @@ ChooseWindow::ChooseWindow(QWidget *parent) :
     fileButton = ui->fileButton;
     // 连接按钮的点击事件到槽函数
     QObject::connect(fileButton, &QPushButton::clicked, [&]() {
-//        QMessageBox::warning(this, "警告", "按钮被点击了！");
         // 打开文件加解密窗口
         FileWindow *fileWindow;
         fileWindow = new FileWindow;
@@ -36,9 +36,11 @@ ChooseWindow::ChooseWindow(QWidget *parent) :
     stringButton = ui->stringButton;
     // 连接按钮的点击事件到槽函数
     QObject::connect(stringButton, &QPushButton::clicked, [&]() {
+        StringWindow *stringWindow;
+        stringWindow = new StringWindow;
+        stringWindow->show();
         // 关闭当前窗口，hide 比 close 的占用内存高一些，但是调用方便，时间性能快
         this->hide();
-        // 打开字符串加解密窗口
     });
 }
 

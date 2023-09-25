@@ -39,6 +39,9 @@ set(SOURCE_FILES
         Sources/filewindow.cpp
         Sources/Headers/filewindow.h
         Sources/Forms/filewindow.ui
+        Sources/stringwindow.cpp
+        Sources/Headers/stringwindow.h
+        Sources/Forms/stringwindow.ui
         )
 
 add_executable(${PROJECT_NAME} ${SOURCE_FILES} ${SOURCES_LIST})

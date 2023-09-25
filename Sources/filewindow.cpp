@@ -204,9 +204,8 @@ void FileWindow::decryptFile() {
     }
 }
 
-// 显示输入对话框，参数1：窗口 title 显示文本；参数2；提示显示文本；参数3：默认值
-QString
-FileWindow::showInputDialog(const QString &title, const QString &labelText, const QString &defaultValue, bool *ok) {
+// 显示输入对话框，参数1：窗口 title 显示文本；参数2；提示显示文本；参数3：默认值；参数4：确认用户点的是不是“确认”按钮
+QString FileWindow::showInputDialog(const QString &title, const QString &labelText, const QString &defaultValue, bool *ok) {
     QString key = defaultValue;
     // 弹出对话框
     QInputDialog dialog(this);
@@ -223,7 +222,7 @@ FileWindow::showInputDialog(const QString &title, const QString &labelText, cons
         *ok = false;
     }
     key = dialog.textValue();
-    return key;
+    return key.trimmed();
 }
 
 // 产生指定长度的随机字符串
