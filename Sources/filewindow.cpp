@@ -310,7 +310,7 @@ bool FileWindow::decryptFileBySet(const QSet<QString> &fileSet, const QString &k
 
         QFileInfo fileInfo(filePath);
         // 加密文件的文件名
-        QString decryptedFileName = "en_" + fileInfo.fileName();
+        QString decryptedFileName = "dec_" + fileInfo.fileName();
         // 加密文件的存储位置
         QString decryptedFilePath = fileInfo.absolutePath() + "/" + decryptedFileName;
 

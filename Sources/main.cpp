@@ -1,9 +1,10 @@
 #include <QApplication>
+#include <QtGui>
 #include "choosewindow.h"
 
 int main(int argc, char *argv[]) {
     // 隐藏CMD窗口
-//    FreeConsole();
+    FreeConsole();
 
     QApplication a(argc, argv);
     ChooseWindow chooseWindow;
